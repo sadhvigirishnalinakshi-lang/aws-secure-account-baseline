@@ -10,7 +10,6 @@ Learn how AWS IAM works by building it, breaking it on purpose, and documenting 
 - An admin IAM user for daily work
 - Groups: `Kitchen` (S3 full access) and `Cashiers` (S3 read-only)
 - Users placed in groups, with no policies attached directly to people
-- A custom JSON policy I wrote, limited to one S3 bucket
 - A role with a trust policy and a permission policy
 - A billing budget alert
 
