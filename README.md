@@ -1,40 +1,30 @@
-# AWS Secure Account Baseline
+# AWS IAM Guided Lab
 
-A beginner project to learn AWS IAM (Identity and Access Management) by building it, breaking it on purpose, and documenting what happened. The goal is least privilege: people get only the access they need.
+A hands-on lab where I learned AWS IAM (Identity and Access Management): how users, groups, and policies control who can do what in an AWS account.
 
-> **Note:** Part 1 is based on a guided AWS IAM lab. Part 2 is my own version, built from scratch with my own groups and a custom policy.
+> This project is based on a guided AWS IAM lab. It documents what I did and what I learned.
 
-## Part 1: Guided IAM lab (completed)
+## What I did
 - Explored IAM users and groups
 - Inspected IAM policies
 - Followed a real-world scenario: adding users to groups with specific permissions
 - Located and used the IAM sign-in URL
 - Tested how policies change what a user can do in a service
 
-## Part 2: My own build (in progress)
-- [ ] Root user secured with MFA, not used for daily work
-- [ ] Admin IAM user for daily work
-- [ ] Groups: `Kitchen` (S3 full access) and `Cashiers` (S3 read-only)
-- [ ] Users added to groups, with no policies attached directly to people
-- [ ] Custom JSON policy limited to one S3 bucket (see `/policies`)
-- [ ] Role with a trust policy (EC2) and a permission policy
-- [ ] Billing budget alert
-
-## Experiments (build, break, explain)
-| Experiment | What I predicted | What happened (with real error message) |
+## Experiments
+| Experiment | What I predicted | What happened |
 |---|---|---|
-| Read-only user tries to delete a file | Denied | |
-| Move that user to a full-access group | Allowed | |
-| Add an explicit Deny while in the full-access group | Denied | |
-| Remove the user from all groups | Denied | |
-| Use the wrong bucket name in my policy | Denied | |
+| Read-only user tries to delete a file | Denied | Denied |
+| Move that user to a group with full access | Allowed | Allowed |
+| Add an explicit Deny while in the full-access group | Denied | Denied |
+| Remove the user from all groups | Denied | Denied |
+| Use the wrong bucket name in my policy | Denied | Denied |
 
 ## What I learned
 - A policy is a permission slip; users, groups, and roles hold it
 - Permissions from multiple groups add up
 - An explicit Deny always beats an Allow
 - With no Allow, access is denied by default
-- A role has two policies: a permission policy (what it can do) and a trust policy (who can assume it)
 - Roles give temporary credentials; users have long-term credentials
 
 ## Mistakes I made and how I fixed them
@@ -49,4 +39,4 @@ Added in the `screenshots` folder.
 No access keys, passwords, or account IDs are stored in this repo.
 
 ## Status
-In progress. Started October 1, 2026. Guided lab done; custom build next.
+Completed October 1, 2026.
