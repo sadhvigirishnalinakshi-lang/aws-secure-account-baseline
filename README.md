@@ -17,7 +17,7 @@ Learn how AWS IAM works by building it, breaking it on purpose, and documenting 
 ## Experiments (build, break, explain)
 | Experiment | What I predicted | What happened |
 |---|---|---|
-| Read-only user tries to delete a file | | |
+| Read-only user tries to delete a file |deny |deny |
 | Move that user to a group with full access | | |
 | Add an explicit Deny while they're in the full-access group | | |
 | Remove the user from all groups | | |
