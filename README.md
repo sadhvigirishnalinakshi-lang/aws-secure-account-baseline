@@ -1,5 +1,4 @@
 # aws-secure-account-baseline
-# Secure AWS Account Baseline
 
 A beginner project where I set up an AWS account the way a real company would: the right people get only the access they need (least privilege).
 
